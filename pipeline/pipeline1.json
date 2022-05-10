@@ -39,13 +39,7 @@
 				"inputs": [
 					{
 						"referenceName": "Binary1",
-						"type": "DatasetReference",
-						"parameters": {
-							"srcfilename": {
-								"value": "@pipeline().parameters.filename",
-								"type": "Expression"
-							}
-						}
+						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
@@ -59,11 +53,6 @@
 		"parameters": {
 			"filename": {
 				"type": "string"
-			}
-		},
-		"variables": {
-			"filename2": {
-				"type": "String"
 			}
 		},
 		"annotations": []
