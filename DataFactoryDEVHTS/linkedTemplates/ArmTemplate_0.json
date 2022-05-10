@@ -107,6 +107,12 @@
 					"referenceName": "FtpServer1",
 					"type": "LinkedServiceReference"
 				},
+				"parameters": {
+					"srcfilename": {
+						"type": "string",
+						"defaultValue": "standard"
+					}
+				},
 				"annotations": [],
 				"type": "Binary",
 				"typeProperties": {
