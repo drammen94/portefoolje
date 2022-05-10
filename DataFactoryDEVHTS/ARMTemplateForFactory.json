@@ -84,7 +84,9 @@
 							{
 								"referenceName": "Binary1",
 								"type": "DatasetReference",
-								"parameters": {}
+								"parameters": {
+									"DisplayName": "@pipeline().parameters.DisplayName"
+								}
 							}
 						],
 						"outputs": [
@@ -101,8 +103,9 @@
 					"cancelAfter": {}
 				},
 				"parameters": {
-					"filename": {
-						"type": "string"
+					"Displayname": {
+						"type": "string",
+						"defaultValue": "@pipeline().parameters.DisplayName"
 					}
 				},
 				"annotations": []
@@ -122,9 +125,9 @@
 					"type": "LinkedServiceReference"
 				},
 				"parameters": {
-					"srcfilename": {
+					"DisplayName": {
 						"type": "string",
-						"defaultValue": "@dataset().srcfilename"
+						"defaultValue": "DisplayName:"
 					}
 				},
 				"annotations": [],
@@ -133,7 +136,7 @@
 					"location": {
 						"type": "FtpServerLocation",
 						"fileName": {
-							"value": "@dataset().srcfilename",
+							"value": "@dataset().DisplayName",
 							"type": "Expression"
 						},
 						"folderPath": "r"
