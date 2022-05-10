@@ -15,7 +15,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "FtpServerLocation",
-				"fileName": "@pipeline().parameters.srcfilename",
+				"fileName": "P.00988603880.004.P002.085244.DAT",
 				"folderPath": "r"
 			}
 		}
