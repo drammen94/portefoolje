@@ -50,8 +50,13 @@
 			}
 		],
 		"parameters": {
-			"filnavn": {
+			"filename": {
 				"type": "string"
+			}
+		},
+		"variables": {
+			"filename2": {
+				"type": "String"
 			}
 		},
 		"annotations": []
