@@ -21,7 +21,8 @@
 							"type": "FtpReadSettings",
 							"recursive": true,
 							"useBinaryTransfer": true,
-							"disableChunking": false
+							"deleteFilesAfterCompletion": false,
+							"disableChunking": true
 						},
 						"formatSettings": {
 							"type": "BinaryReadSettings"
