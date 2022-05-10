@@ -110,7 +110,7 @@
 				"parameters": {
 					"srcfilename": {
 						"type": "string",
-						"defaultValue": "standard"
+						"defaultValue": "@dataset().srcfilename"
 					}
 				},
 				"annotations": [],
@@ -118,7 +118,10 @@
 				"typeProperties": {
 					"location": {
 						"type": "FtpServerLocation",
-						"fileName": "@pipeline().parameters.srcfilename",
+						"fileName": {
+							"value": "@dataset().srcfilename",
+							"type": "Expression"
+						},
 						"folderPath": "r"
 					}
 				}
@@ -194,7 +197,8 @@
 									"type": "FtpReadSettings",
 									"recursive": true,
 									"useBinaryTransfer": true,
-									"disableChunking": false
+									"deleteFilesAfterCompletion": false,
+									"disableChunking": true
 								},
 								"formatSettings": {
 									"type": "BinaryReadSettings"
