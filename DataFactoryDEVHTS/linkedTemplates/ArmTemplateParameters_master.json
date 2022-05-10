@@ -5,14 +5,17 @@
 		"factoryName": {
 			"value": "DataFactoryDEVHTS"
 		},
+		"AzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
 		"FtpServer1_password": {
 			"value": ""
 		},
 		"SharePointOnlineList1_servicePrincipalKey": {
 			"value": ""
 		},
-		"AzureDataLakeStorage1_accountKey": {
-			"value": ""
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://financialtransactions.dfs.core.windows.net"
 		},
 		"FtpServer1_properties_typeProperties_host": {
 			"value": "tset.files.com"
@@ -22,9 +25,6 @@
 		},
 		"SharePointOnlineList1_properties_typeProperties_servicePrincipalId": {
 			"value": "a7a2e8ae-2782-4d6d-aaea-1cf45e5fc63d"
-		},
-		"AzureDataLakeStorage1_properties_typeProperties_url": {
-			"value": "https://htsdatalake01.dfs.core.windows.net"
 		},
 		"containerUri": {
 			"value": ""
