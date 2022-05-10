@@ -49,6 +49,11 @@
 				]
 			}
 		],
+		"parameters": {
+			"filnavn": {
+				"type": "string"
+			}
+		},
 		"annotations": []
 	}
 }
