@@ -18,11 +18,9 @@
 					"source": {
 						"type": "BinarySource",
 						"storeSettings": {
-							"type": "FtpReadSettings",
+							"type": "SftpReadSettings",
 							"recursive": true,
-							"useBinaryTransfer": true,
-							"deleteFilesAfterCompletion": false,
-							"disableChunking": true
+							"disableChunking": false
 						},
 						"formatSettings": {
 							"type": "BinaryReadSettings"

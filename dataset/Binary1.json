@@ -2,7 +2,7 @@
 	"name": "Binary1",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "FtpServer1",
+			"referenceName": "DNBSFTP",
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
@@ -15,12 +15,9 @@
 		"type": "Binary",
 		"typeProperties": {
 			"location": {
-				"type": "FtpServerLocation",
-				"fileName": {
-					"value": "@dataset().DisplayName",
-					"type": "Expression"
-				},
-				"folderPath": "r"
+				"type": "SftpLocation",
+				"fileName": "P.00988603880.004.P002.065078.DAT",
+				"folderPath": "/Inbox"
 			}
 		}
 	}
