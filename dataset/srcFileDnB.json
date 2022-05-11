@@ -1,5 +1,5 @@
 {
-	"name": "Binary1",
+	"name": "srcFileDnB",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "DNBSFTP",
@@ -16,7 +16,10 @@
 		"typeProperties": {
 			"location": {
 				"type": "SftpLocation",
-				"fileName": "P.00988603880.004.P002.065078.DAT",
+				"fileName": {
+					"value": "@dataset().DisplayName",
+					"type": "Expression"
+				},
 				"folderPath": "/Inbox"
 			}
 		}

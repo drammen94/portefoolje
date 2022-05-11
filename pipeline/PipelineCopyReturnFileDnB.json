@@ -1,9 +1,9 @@
 {
-	"name": "pipeline1",
+	"name": "PipelineCopyReturnFileDnB",
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy data1",
+				"name": "CopyFilefromInboxDnB",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -36,7 +36,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "Binary1",
+						"referenceName": "srcFileDnB",
 						"type": "DatasetReference",
 						"parameters": {
 							"DisplayName": "@pipeline().parameters.DisplayName"
@@ -45,7 +45,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "Binary2",
+						"referenceName": "targetFolder",
 						"type": "DatasetReference"
 					}
 				]
