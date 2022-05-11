@@ -14,6 +14,12 @@
 		"SharePointOnlineList1_servicePrincipalKey": {
 			"value": ""
 		},
+		"DNBSFTP_privateKeyContent": {
+			"value": ""
+		},
+		"DNBSFTP_passPhrase": {
+			"value": ""
+		},
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
 			"value": "https://financialtransactions.dfs.core.windows.net"
 		},
@@ -25,6 +31,12 @@
 		},
 		"SharePointOnlineList1_properties_typeProperties_servicePrincipalId": {
 			"value": "a7a2e8ae-2782-4d6d-aaea-1cf45e5fc63d"
+		},
+		"DNBSFTP_properties_typeProperties_host": {
+			"value": "fgw.dnb.no"
+		},
+		"DNBSFTP_properties_typeProperties_userName": {
+			"value": "P5243440"
 		}
 	}
 }

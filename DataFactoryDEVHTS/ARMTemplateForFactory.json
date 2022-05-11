@@ -19,6 +19,14 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'servicePrincipalKey' of 'SharePointOnlineList1'"
 		},
+		"DNBSFTP_privateKeyContent": {
+			"type": "secureString",
+			"metadata": "Secure string for 'privateKeyContent' of 'DNBSFTP'"
+		},
+		"DNBSFTP_passPhrase": {
+			"type": "secureString",
+			"metadata": "Secure string for 'passPhrase' of 'DNBSFTP'"
+		},
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://financialtransactions.dfs.core.windows.net"
@@ -34,6 +42,14 @@
 		"SharePointOnlineList1_properties_typeProperties_servicePrincipalId": {
 			"type": "string",
 			"defaultValue": "a7a2e8ae-2782-4d6d-aaea-1cf45e5fc63d"
+		},
+		"DNBSFTP_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "fgw.dnb.no"
+		},
+		"DNBSFTP_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "P5243440"
 		}
 	},
 	"variables": {
@@ -62,11 +78,9 @@
 							"source": {
 								"type": "BinarySource",
 								"storeSettings": {
-									"type": "FtpReadSettings",
+									"type": "SftpReadSettings",
 									"recursive": true,
-									"useBinaryTransfer": true,
-									"deleteFilesAfterCompletion": false,
-									"disableChunking": true
+									"disableChunking": false
 								},
 								"formatSettings": {
 									"type": "BinaryReadSettings"
@@ -121,7 +135,7 @@
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"linkedServiceName": {
-					"referenceName": "FtpServer1",
+					"referenceName": "DNBSFTP",
 					"type": "LinkedServiceReference"
 				},
 				"parameters": {
@@ -134,17 +148,14 @@
 				"type": "Binary",
 				"typeProperties": {
 					"location": {
-						"type": "FtpServerLocation",
-						"fileName": {
-							"value": "@dataset().DisplayName",
-							"type": "Expression"
-						},
-						"folderPath": "r"
+						"type": "SftpLocation",
+						"fileName": "P.00988603880.004.P002.065078.DAT",
+						"folderPath": "/Inbox"
 					}
 				}
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/FtpServer1')]"
+				"[concat(variables('factoryId'), '/linkedServices/DNBSFTP')]"
 			]
 		},
 		{
@@ -242,6 +253,31 @@
 					"servicePrincipalKey": {
 						"type": "SecureString",
 						"value": "[parameters('SharePointOnlineList1_servicePrincipalKey')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DNBSFTP')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "Sftp",
+				"typeProperties": {
+					"host": "[parameters('DNBSFTP_properties_typeProperties_host')]",
+					"port": 22,
+					"skipHostKeyValidation": true,
+					"authenticationType": "SshPublicKey",
+					"userName": "[parameters('DNBSFTP_properties_typeProperties_userName')]",
+					"privateKeyContent": {
+						"type": "SecureString",
+						"value": "[parameters('DNBSFTP_privateKeyContent')]"
+					},
+					"passPhrase": {
+						"type": "SecureString",
+						"value": "[parameters('DNBSFTP_passPhrase')]"
 					}
 				}
 			},

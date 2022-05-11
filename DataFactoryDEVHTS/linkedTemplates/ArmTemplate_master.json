@@ -19,6 +19,14 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'servicePrincipalKey' of 'SharePointOnlineList1'"
 		},
+		"DNBSFTP_privateKeyContent": {
+			"type": "secureString",
+			"metadata": "Secure string for 'privateKeyContent' of 'DNBSFTP'"
+		},
+		"DNBSFTP_passPhrase": {
+			"type": "secureString",
+			"metadata": "Secure string for 'passPhrase' of 'DNBSFTP'"
+		},
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://financialtransactions.dfs.core.windows.net"
@@ -34,6 +42,14 @@
 		"SharePointOnlineList1_properties_typeProperties_servicePrincipalId": {
 			"type": "string",
 			"defaultValue": "a7a2e8ae-2782-4d6d-aaea-1cf45e5fc63d"
+		},
+		"DNBSFTP_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "fgw.dnb.no"
+		},
+		"DNBSFTP_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "P5243440"
 		},
 		"containerUri": {
 			"type": "string",
@@ -71,6 +87,12 @@
 					"SharePointOnlineList1_servicePrincipalKey": {
 						"value": "[parameters('SharePointOnlineList1_servicePrincipalKey')]"
 					},
+					"DNBSFTP_privateKeyContent": {
+						"value": "[parameters('DNBSFTP_privateKeyContent')]"
+					},
+					"DNBSFTP_passPhrase": {
+						"value": "[parameters('DNBSFTP_passPhrase')]"
+					},
 					"AzureDataLakeStorage1_properties_typeProperties_url": {
 						"value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]"
 					},
@@ -82,6 +104,12 @@
 					},
 					"SharePointOnlineList1_properties_typeProperties_servicePrincipalId": {
 						"value": "[parameters('SharePointOnlineList1_properties_typeProperties_servicePrincipalId')]"
+					},
+					"DNBSFTP_properties_typeProperties_host": {
+						"value": "[parameters('DNBSFTP_properties_typeProperties_host')]"
+					},
+					"DNBSFTP_properties_typeProperties_userName": {
+						"value": "[parameters('DNBSFTP_properties_typeProperties_userName')]"
 					}
 				}
 			},
